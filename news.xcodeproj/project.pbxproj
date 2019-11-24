@@ -21,6 +21,9 @@
 		8B64DD74238B05FB007F970F /* newsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD73238B05FB007F970F /* newsTests.m */; };
 		8B64DD7F238B05FB007F970F /* newsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD7E238B05FB007F970F /* newsUITests.m */; };
 		8B64DD95238B0BC8007F970F /* BaseRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD94238B0BC8007F970F /* BaseRouter.m */; };
+		8B64DD98238B0C67007F970F /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD97238B0C67007F970F /* BaseVC.m */; };
+		8B64DD9D238B0D20007F970F /* ThemeMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD9C238B0D20007F970F /* ThemeMain.m */; };
+		8B64DDA0238B0D5C007F970F /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD9F238B0D5C007F970F /* ThemeManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,13 @@
 		8B64DD80238B05FB007F970F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B64DD93238B0BC8007F970F /* BaseRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseRouter.h; sourceTree = "<group>"; };
 		8B64DD94238B0BC8007F970F /* BaseRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseRouter.m; sourceTree = "<group>"; };
+		8B64DD96238B0C67007F970F /* BaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		8B64DD97238B0C67007F970F /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		8B64DD9A238B0CD7007F970F /* ThemeProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeProtocol.h; sourceTree = "<group>"; };
+		8B64DD9B238B0D20007F970F /* ThemeMain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeMain.h; sourceTree = "<group>"; };
+		8B64DD9C238B0D20007F970F /* ThemeMain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeMain.m; sourceTree = "<group>"; };
+		8B64DD9E238B0D5C007F970F /* ThemeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
+		8B64DD9F238B0D5C007F970F /* ThemeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +217,7 @@
 		8B64DD8F238B0A38007F970F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8B64DD99238B0CBC007F970F /* Theme */,
 				8B64DD5D238B05F6007F970F /* Main.storyboard */,
 				8B64DD63238B05FB007F970F /* Assets.xcassets */,
 				8B64DD65238B05FB007F970F /* LaunchScreen.storyboard */,
@@ -228,6 +239,8 @@
 		8B64DD91238B0B7F007F970F /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				8B64DD96238B0C67007F970F /* BaseVC.h */,
+				8B64DD97238B0C67007F970F /* BaseVC.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -239,6 +252,18 @@
 				8B64DD94238B0BC8007F970F /* BaseRouter.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		8B64DD99238B0CBC007F970F /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				8B64DD9A238B0CD7007F970F /* ThemeProtocol.h */,
+				8B64DD9B238B0D20007F970F /* ThemeMain.h */,
+				8B64DD9C238B0D20007F970F /* ThemeMain.m */,
+				8B64DD9E238B0D5C007F970F /* ThemeManager.h */,
+				8B64DD9F238B0D5C007F970F /* ThemeManager.m */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,11 +468,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B64DD98238B0C67007F970F /* BaseVC.m in Sources */,
 				8B64DD6A238B05FB007F970F /* main.m in Sources */,
+				8B64DDA0238B0D5C007F970F /* ThemeManager.m in Sources */,
 				8B64DD95238B0BC8007F970F /* BaseRouter.m in Sources */,
 				8B64DD5C238B05F6007F970F /* ViewController.m in Sources */,
 				8B64DD56238B05F6007F970F /* AppDelegate.m in Sources */,
 				8B64DD62238B05F6007F970F /* news.xcdatamodeld in Sources */,
+				8B64DD9D238B0D20007F970F /* ThemeMain.m in Sources */,
 				8B64DD59238B05F6007F970F /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

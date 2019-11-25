@@ -1,3 +1,40 @@
-PODFILE CHECKSUM: d4a26cac6769353e323e8777b70ead704c247ec5
+PODS:
+  - AFNetworking (2.7.0):
+    - AFNetworking/NSURLConnection (= 2.7.0)
+    - AFNetworking/NSURLSession (= 2.7.0)
+    - AFNetworking/Reachability (= 2.7.0)
+    - AFNetworking/Security (= 2.7.0)
+    - AFNetworking/Serialization (= 2.7.0)
+    - AFNetworking/UIKit (= 2.7.0)
+  - AFNetworking/NSURLConnection (2.7.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.7.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.7.0)
+  - AFNetworking/Security (2.7.0)
+  - AFNetworking/Serialization (2.7.0)
+  - AFNetworking/UIKit (2.7.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - MediaRSSParser (1.0.1):
+    - AFNetworking (~> 2.0)
+
+DEPENDENCIES:
+  - MediaRSSParser
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - MediaRSSParser
+
+SPEC CHECKSUMS:
+  AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
+  MediaRSSParser: 5d73c6a4278448b7f56fba73c97b5ffaf4ead72c
+
+PODFILE CHECKSUM: 8a9a7665b98d5b634c804f18e2a0f471e31b22bd
 
 COCOAPODS: 1.8.4

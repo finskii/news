@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface NewsInteractor : NSObject
 
++ (void) loadNews:(void(^)(NSArray* news, NSObject* error))completion;
+
 @end
 
-NS_ASSUME_NONNULL_END

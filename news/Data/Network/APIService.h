@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "RequestConfig.h"
 
 @interface APIService : NSObject
 
++ (void) loadDataWithConfig:(NSArray<RequestConfig*>*)configs completion:(void(^)(NSArray* arrChannels))completion;
+
 @end
 
-NS_ASSUME_NONNULL_END

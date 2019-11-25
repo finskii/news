@@ -10,4 +10,6 @@
 
 @interface RequestConfig : NSObject
 
+@property (nonatomic, strong) NSString* rssUrlString;
+
 @end

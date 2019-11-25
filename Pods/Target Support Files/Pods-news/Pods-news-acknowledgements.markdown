@@ -24,11 +24,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## MediaRSSParser
+## BlockRSSParser
 
-`MediaRSSParser` is copyright (c) 2014 Joshua Greene (jrg.developer@gmail.com).
-
-`BlockRSSParser` (https://github.com/tibo/BlockRSSParser), which `MediaRSSParser is built upon, is copyright (c) 2012 Thibaut LE LEVIER (http://www.lelevier.fr).
+Copyright (c) 2012 Thibaut LE LEVIER (http://www.lelevier.fr)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

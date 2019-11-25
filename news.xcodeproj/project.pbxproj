@@ -12,6 +12,11 @@
 		29BA8D173A0465ECFDB6056B /* Pods_news_newsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C0FAFB130BF63B2C3FDC7 /* Pods_news_newsUITests.framework */; };
 		8B35E26E238C4B9E001890A5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B35E26D238C4B9E001890A5 /* Default-568h@2x.png */; };
 		8B35E271238C4D00001890A5 /* BaseNVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35E270238C4D00001890A5 /* BaseNVC.m */; };
+		8B35E274238C4D45001890A5 /* Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35E273238C4D45001890A5 /* Router.m */; };
+		8B35E278238C4D8B001890A5 /* NewsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35E277238C4D8B001890A5 /* NewsListVC.m */; };
+		8B35E27A238C4D99001890A5 /* NewsListVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B35E279238C4D99001890A5 /* NewsListVC.storyboard */; };
+		8B35E27E238C4FBF001890A5 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35E27C238C4FBF001890A5 /* NewsCell.m */; };
+		8B35E27F238C4FBF001890A5 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B35E27D238C4FBF001890A5 /* NewsCell.xib */; };
 		8B64DD56238B05F6007F970F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD55238B05F6007F970F /* AppDelegate.m */; };
 		8B64DD5C238B05F6007F970F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD5B238B05F6007F970F /* ViewController.m */; };
 		8B64DD5F238B05F6007F970F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B64DD5D238B05F6007F970F /* Main.storyboard */; };
@@ -57,6 +62,14 @@
 		8B35E26D238C4B9E001890A5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8B35E26F238C4D00001890A5 /* BaseNVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNVC.h; sourceTree = "<group>"; };
 		8B35E270238C4D00001890A5 /* BaseNVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNVC.m; sourceTree = "<group>"; };
+		8B35E272238C4D45001890A5 /* Router.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Router.h; sourceTree = "<group>"; };
+		8B35E273238C4D45001890A5 /* Router.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Router.m; sourceTree = "<group>"; };
+		8B35E276238C4D8B001890A5 /* NewsListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsListVC.h; sourceTree = "<group>"; };
+		8B35E277238C4D8B001890A5 /* NewsListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsListVC.m; sourceTree = "<group>"; };
+		8B35E279238C4D99001890A5 /* NewsListVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsListVC.storyboard; sourceTree = "<group>"; };
+		8B35E27B238C4FBF001890A5 /* NewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		8B35E27C238C4FBF001890A5 /* NewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		8B35E27D238C4FBF001890A5 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		8B64DD51238B05F6007F970F /* news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B64DD54238B05F6007F970F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8B64DD55238B05F6007F970F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -136,6 +149,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8B35E275238C4D6E001890A5 /* NewsList */ = {
+			isa = PBXGroup;
+			children = (
+				8B35E276238C4D8B001890A5 /* NewsListVC.h */,
+				8B35E277238C4D8B001890A5 /* NewsListVC.m */,
+				8B35E279238C4D99001890A5 /* NewsListVC.storyboard */,
+				8B35E27B238C4FBF001890A5 /* NewsCell.h */,
+				8B35E27C238C4FBF001890A5 /* NewsCell.m */,
+				8B35E27D238C4FBF001890A5 /* NewsCell.xib */,
+			);
+			path = NewsList;
+			sourceTree = "<group>";
+		};
 		8B64DD48238B05F6007F970F = {
 			isa = PBXGroup;
 			children = (
@@ -200,8 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				8B64DD91238B0B7F007F970F /* Base */,
-				8B64DD5A238B05F6007F970F /* ViewController.h */,
-				8B64DD5B238B05F6007F970F /* ViewController.m */,
+				8B35E275238C4D6E001890A5 /* NewsList */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +235,8 @@
 			isa = PBXGroup;
 			children = (
 				8B64DD92238B0B8D007F970F /* Base */,
+				8B35E272238C4D45001890A5 /* Router.h */,
+				8B35E273238C4D45001890A5 /* Router.m */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -229,6 +256,8 @@
 		8B64DD90238B0A41007F970F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8B64DD5A238B05F6007F970F /* ViewController.h */,
+				8B64DD5B238B05F6007F970F /* ViewController.m */,
 				8B64DD54238B05F6007F970F /* AppDelegate.h */,
 				8B64DD55238B05F6007F970F /* AppDelegate.m */,
 				8B64DD68238B05FB007F970F /* Info.plist */,
@@ -375,9 +404,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B35E27F238C4FBF001890A5 /* NewsCell.xib in Resources */,
 				8B64DD67238B05FB007F970F /* LaunchScreen.storyboard in Resources */,
 				8B35E26E238C4B9E001890A5 /* Default-568h@2x.png in Resources */,
 				8B64DD64238B05FB007F970F /* Assets.xcassets in Resources */,
+				8B35E27A238C4D99001890A5 /* NewsListVC.storyboard in Resources */,
 				8B64DD5F238B05F6007F970F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,10 +505,13 @@
 			files = (
 				8B64DD98238B0C67007F970F /* BaseVC.m in Sources */,
 				8B64DD6A238B05FB007F970F /* main.m in Sources */,
+				8B35E27E238C4FBF001890A5 /* NewsCell.m in Sources */,
 				8B64DDA0238B0D5C007F970F /* ThemeManager.m in Sources */,
 				8B64DD95238B0BC8007F970F /* BaseRouter.m in Sources */,
+				8B35E274238C4D45001890A5 /* Router.m in Sources */,
 				8B64DD5C238B05F6007F970F /* ViewController.m in Sources */,
 				8B64DD56238B05F6007F970F /* AppDelegate.m in Sources */,
+				8B35E278238C4D8B001890A5 /* NewsListVC.m in Sources */,
 				8B64DD62238B05F6007F970F /* news.xcdatamodeld in Sources */,
 				8B35E271238C4D00001890A5 /* BaseNVC.m in Sources */,
 				8B64DD9D238B0D20007F970F /* ThemeMain.m in Sources */,

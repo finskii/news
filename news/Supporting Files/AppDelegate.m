@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Router.h"
 
 @interface AppDelegate ()
 
@@ -17,8 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    
-
+    [Router gotoMainViewFrom:self.window];
 
     return YES;
 }

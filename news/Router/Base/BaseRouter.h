@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "BaseVC.h"
+#import "BaseNVC.h"
 
 @interface BaseRouter : NSObject
 
-- (id) vcByClass:(Class)theClass;
++ (id) vcByClass:(Class)theClass;
 
 @end
 

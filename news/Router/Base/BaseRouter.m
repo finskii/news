@@ -11,7 +11,7 @@
 
 @implementation BaseRouter
 
-- (id) vcByClass:(Class)theClass {
++ (id) vcByClass:(Class)theClass {
     
     UIStoryboard* _sb = [UIStoryboard storyboardWithName:NSStringFromClass(theClass) bundle:nil];
     id _vc = [_sb instantiateViewControllerWithIdentifier:NSStringFromClass(theClass)];

@@ -11,6 +11,7 @@
 		24AC7F0C6690C3522857BDB5 /* Pods_news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438510E293EF26EC892EAF7E /* Pods_news.framework */; };
 		29BA8D173A0465ECFDB6056B /* Pods_news_newsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C0FAFB130BF63B2C3FDC7 /* Pods_news_newsUITests.framework */; };
 		8B35E26E238C4B9E001890A5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B35E26D238C4B9E001890A5 /* Default-568h@2x.png */; };
+		8B35E271238C4D00001890A5 /* BaseNVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35E270238C4D00001890A5 /* BaseNVC.m */; };
 		8B64DD56238B05F6007F970F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD55238B05F6007F970F /* AppDelegate.m */; };
 		8B64DD5C238B05F6007F970F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD5B238B05F6007F970F /* ViewController.m */; };
 		8B64DD5F238B05F6007F970F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B64DD5D238B05F6007F970F /* Main.storyboard */; };
@@ -54,6 +55,8 @@
 		75BC765A2ECFC534352C62AA /* Pods-news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news.debug.xcconfig"; path = "Target Support Files/Pods-news/Pods-news.debug.xcconfig"; sourceTree = "<group>"; };
 		82699238B6E200F64D636F1E /* Pods-news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news.release.xcconfig"; path = "Target Support Files/Pods-news/Pods-news.release.xcconfig"; sourceTree = "<group>"; };
 		8B35E26D238C4B9E001890A5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8B35E26F238C4D00001890A5 /* BaseNVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNVC.h; sourceTree = "<group>"; };
+		8B35E270238C4D00001890A5 /* BaseNVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNVC.m; sourceTree = "<group>"; };
 		8B64DD51238B05F6007F970F /* news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B64DD54238B05F6007F970F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8B64DD55238B05F6007F970F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 			children = (
 				8B64DD96238B0C67007F970F /* BaseVC.h */,
 				8B64DD97238B0C67007F970F /* BaseVC.m */,
+				8B35E26F238C4D00001890A5 /* BaseNVC.h */,
+				8B35E270238C4D00001890A5 /* BaseNVC.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 				8B64DD5C238B05F6007F970F /* ViewController.m in Sources */,
 				8B64DD56238B05F6007F970F /* AppDelegate.m in Sources */,
 				8B64DD62238B05F6007F970F /* news.xcdatamodeld in Sources */,
+				8B35E271238C4D00001890A5 /* BaseNVC.m in Sources */,
 				8B64DD9D238B0D20007F970F /* ThemeMain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

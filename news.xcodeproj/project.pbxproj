@@ -10,8 +10,8 @@
 		1B0781F105448121B004CE17 /* Pods_newsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E73E80DF7F67155C2AE926F /* Pods_newsTests.framework */; };
 		24AC7F0C6690C3522857BDB5 /* Pods_news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438510E293EF26EC892EAF7E /* Pods_news.framework */; };
 		29BA8D173A0465ECFDB6056B /* Pods_news_newsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C0FAFB130BF63B2C3FDC7 /* Pods_news_newsUITests.framework */; };
+		8B35E26E238C4B9E001890A5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B35E26D238C4B9E001890A5 /* Default-568h@2x.png */; };
 		8B64DD56238B05F6007F970F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD55238B05F6007F970F /* AppDelegate.m */; };
-		8B64DD59238B05F6007F970F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD58238B05F6007F970F /* SceneDelegate.m */; };
 		8B64DD5C238B05F6007F970F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD5B238B05F6007F970F /* ViewController.m */; };
 		8B64DD5F238B05F6007F970F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B64DD5D238B05F6007F970F /* Main.storyboard */; };
 		8B64DD62238B05F6007F970F /* news.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD60238B05F6007F970F /* news.xcdatamodeld */; };
@@ -53,11 +53,10 @@
 		665092E154D367C51C698EBF /* Pods-news-newsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news-newsUITests.debug.xcconfig"; path = "Target Support Files/Pods-news-newsUITests/Pods-news-newsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		75BC765A2ECFC534352C62AA /* Pods-news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news.debug.xcconfig"; path = "Target Support Files/Pods-news/Pods-news.debug.xcconfig"; sourceTree = "<group>"; };
 		82699238B6E200F64D636F1E /* Pods-news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news.release.xcconfig"; path = "Target Support Files/Pods-news/Pods-news.release.xcconfig"; sourceTree = "<group>"; };
+		8B35E26D238C4B9E001890A5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8B64DD51238B05F6007F970F /* news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B64DD54238B05F6007F970F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8B64DD55238B05F6007F970F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8B64DD57238B05F6007F970F /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		8B64DD58238B05F6007F970F /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		8B64DD5A238B05F6007F970F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8B64DD5B238B05F6007F970F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8B64DD5E238B05F6007F970F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -189,8 +188,6 @@
 		8B64DD8C238B0A0C007F970F /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				8B64DD57238B05F6007F970F /* SceneDelegate.h */,
-				8B64DD58238B05F6007F970F /* SceneDelegate.m */,
 				8B64DD60238B05F6007F970F /* news.xcdatamodeld */,
 			);
 			path = Data;
@@ -217,6 +214,7 @@
 		8B64DD8F238B0A38007F970F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8B35E26D238C4B9E001890A5 /* Default-568h@2x.png */,
 				8B64DD99238B0CBC007F970F /* Theme */,
 				8B64DD5D238B05F6007F970F /* Main.storyboard */,
 				8B64DD63238B05FB007F970F /* Assets.xcassets */,
@@ -373,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B64DD67238B05FB007F970F /* LaunchScreen.storyboard in Resources */,
+				8B35E26E238C4B9E001890A5 /* Default-568h@2x.png in Resources */,
 				8B64DD64238B05FB007F970F /* Assets.xcassets in Resources */,
 				8B64DD5F238B05F6007F970F /* Main.storyboard in Resources */,
 			);
@@ -476,7 +475,6 @@
 				8B64DD56238B05F6007F970F /* AppDelegate.m in Sources */,
 				8B64DD62238B05F6007F970F /* news.xcdatamodeld in Sources */,
 				8B64DD9D238B0D20007F970F /* ThemeMain.m in Sources */,
-				8B64DD59238B05F6007F970F /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,14 +646,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B869G75L4Z;
-				INFOPLIST_FILE = news/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/news/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = devenl.news;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -666,14 +666,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B869G75L4Z;
-				INFOPLIST_FILE = news/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/news/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = devenl.news;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

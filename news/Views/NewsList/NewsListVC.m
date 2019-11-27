@@ -39,6 +39,21 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    __weak typeof(self) _weakSelf = self;
+    
+    [NewsInteractor loadNews:^(NSArray *news, NSObject *error) {
+        if (!error) {
+            _weakSelf.arrNews = news;
+            [_weakSelf.tableView reloadData];
+        } else {
+            
+        }
+    }];
+}
+
 #pragma mark - private
 
 

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "RSSItem.h"
 
 @interface NewsCell : UITableViewCell
+    
+@property (nonatomic, strong) RSSItem* item;
 
 @end
 
-NS_ASSUME_NONNULL_END

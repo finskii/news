@@ -21,4 +21,17 @@
     // Configure the view for the selected state
 }
 
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    self.item = nil;
+}
+
+- (void)setItem:(RSSItem *)item {
+    if ([item.guid isEqualToString:_item.guid]) {
+        return;
+    }
+    _item = item;
+    
+}
+
 @end

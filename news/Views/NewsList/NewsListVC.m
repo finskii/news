@@ -67,7 +67,6 @@
     } else {
         self.selectedItem = item;
     }
-//    [self.tableView reloadData];
 }
 
 - (BOOL) shouldBeFullView:(RSSItem*)item {

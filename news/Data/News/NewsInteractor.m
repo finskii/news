@@ -23,6 +23,11 @@
         if (!error) {
             for (RSSChannel* _channel in arrChannels) {
                 [_arr addObjectsFromArray:_channel.items];
+                for (RSSItem* _item in _arr) {
+                    if (!_item.authorEmail) {
+                        _item.authorEmail = _channel.title;
+                    }
+                }
             }
         }
         completion(_arr, error);

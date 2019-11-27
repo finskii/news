@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelSource;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelShortDescription;
+@property (weak, nonatomic) IBOutlet UILabel *labelState;
 
 @end
 
@@ -23,32 +24,43 @@
 + (NSInteger) heightForEntity:(RSSItem*)item
                    isFullView:(BOOL)isFullView {
     
-    NSInteger _height = 10+5+5+10;
+    NSInteger _height = 40;
     NSInteger _width = UIScreen.mainScreen.bounds.size.width;
 
     UILabel* label = [UILabel new];
-    label.text = item.title;
+    if (item.authorEmail) {
+        label.text = item.authorEmail;
+    } else {
+        label.text = @"source";
+    }
     _height += [label heightForWidth:_width - 159];
-    label.text = @"источник";
-    _height += [label heightForWidth:_width - 110];
+    label.text = item.title;
+    _height += [label heightForWidth:_width - 130];
     
     if (isFullView) {
         label.text = item.itemDescription;
-        _height += [label heightForWidth:_width - 110];
+        _height += [label heightForWidth:_width - 120];
     }
     
-    return _height;
+    if (_height > 100) {
+        return _height;
+    } else {
+        return 100;
+    }
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.labelShortDescription.hidden = YES;
+    self.imageViewPreview.image = nil;
 
 }
 
 - (void)prepareForReuse {
     [super prepareForReuse];
     self.item = nil;
+    self.imageViewPreview.image = nil;
+    [self.imageViewPreview sd_cancelCurrentImageLoad];
 }
 
 - (void)setItem:(RSSItem *)item {
@@ -59,28 +71,45 @@
     _item = item;
     
     self.labelTitle.text = _item.title;
-    self.labelSource.text = @"источник";
-    self.labelShortDescription.text = _item.itemDescription;
+    self.labelSource.text = _item.authorEmail;
     
-    [self loadImage:_item.link];
     
+    if (item.authorEmail) {
+        self.labelSource.text = _item.authorEmail;
+    } else {
+        self.labelSource.text = @"source";
+    }
+    
+    if ([_item mediaThumbnails]) {
+        [self loadImage:[[_item mediaThumbnails] firstObject]];
+    }
 }
 
+
 - (void)setIsFullView:(BOOL)isFullView {
-    self.labelShortDescription.hidden = !isFullView;
+    if (isFullView) {
+        self.labelShortDescription.text = _item.itemDescription;
+        self.labelShortDescription.hidden = NO;
+        self.labelState.text = @"read";
+    } else {
+        self.labelShortDescription.text = nil;
+        self.labelShortDescription.hidden = YES;
+        self.labelState.text = @"new";
+
+    }
 }
 
 - (void) loadImage:(NSURL*)url {
     
     __weak typeof(self) _weakSelf = self;
-    
     [self.imageViewPreview sd_setImageWithURL:url completed:^(UIImage * image, NSError * error, SDImageCacheType cacheType, NSURL * imageURL)
     {
-        if (!error &&
-            image &&
-            [imageURL.absoluteString isEqualToString:url.absoluteString])
+        if (!error)
         {
+            self.imageViewPreview.image = nil;
             _weakSelf.imageViewPreview.image = image;
+        } else {
+            
         }
     }];
 }

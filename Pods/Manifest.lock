@@ -20,21 +20,25 @@ PODS:
   - AFNetworking/UIKit (2.7.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - BlockRSSParser (2.1):
+  - HTMLKit (3.1.0)
+  - MediaRSSParser (1.0.1):
     - AFNetworking (~> 2.0)
 
 DEPENDENCIES:
-  - BlockRSSParser
+  - HTMLKit (~> 3.1)
+  - MediaRSSParser
 
 SPEC REPOS:
   trunk:
     - AFNetworking
-    - BlockRSSParser
+    - HTMLKit
+    - MediaRSSParser
 
 SPEC CHECKSUMS:
   AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
-  BlockRSSParser: aedf3ab9a6c92f8d0881b9415fe88b5e136ab174
+  HTMLKit: 4ed10a911462cbf972329ec6aaaa827208dfd70c
+  MediaRSSParser: 5d73c6a4278448b7f56fba73c97b5ffaf4ead72c
 
-PODFILE CHECKSUM: a5bbffa60cd3ed949120d82707e032e8e5f6a232
+PODFILE CHECKSUM: 3f4a1e4a3059e713abdff5fefe8c34b2a857d719
 
 COCOAPODS: 1.8.4

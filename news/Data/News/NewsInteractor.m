@@ -18,8 +18,14 @@
     RequestConfig* _config2 = [RequestConfig new];
     _config2.rssUrlString = @"http://www.gazeta.ru/export/rss/lenta.xml";
     
-    [APIService loadDataWithConfig:@[_config1, _config2] completion:^(NSArray *arrChannels) {
-        
+    [APIService loadDataWithConfig:@[_config1, _config2] completion:^(NSArray *arrChannels, NSError* error) {
+        NSMutableArray* _arr = [NSMutableArray new];
+        if (!error) {
+            for (RSSChannel* _channel in arrChannels) {
+                [_arr addObjectsFromArray:_channel.items];
+            }
+        }
+        completion(_arr, error);
     }];
 }
 

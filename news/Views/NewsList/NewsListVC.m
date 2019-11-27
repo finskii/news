@@ -8,6 +8,7 @@
 
 #import "NewsListVC.h"
 #import "NewsCell.h"
+#import "NewsInteractor.h"
 
 @interface NewsListVC() <UITableViewDelegate, UITableViewDataSource>
 

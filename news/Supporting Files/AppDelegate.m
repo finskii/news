@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "Router.h"
-#import "NewsInteractor.h"
 
 @interface AppDelegate ()
 
@@ -20,9 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [Router gotoMainViewFrom:self.window];
-    [NewsInteractor loadNews:^(NSArray *news, NSObject *error) {
-        
-    }];
+
     return YES;
 }
 

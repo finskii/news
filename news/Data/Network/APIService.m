@@ -7,14 +7,15 @@
 //
 
 #import "APIService.h"
-@import BlockRSSParser;
+//@import BlockRSSParser;
 
 @implementation APIService
 
 + (void) loadDataWithConfig:(NSArray<RequestConfig*>*)configs
-                 completion:(void(^)(NSArray* arrChannels))completion {
+                 completion:(void(^)(NSArray* arrChannels, NSError* error))completion {
     
     __block NSMutableArray* _arr = [NSMutableArray new];
+    __block NSError* _error;
 
     dispatch_group_t _group = dispatch_group_create();
     
@@ -31,32 +32,35 @@
 //            dispatch_group_leave(_group);
 //        }];
         
-        [RSSParser parseRSSFeedForRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:_config.rssUrlString]] success:^(NSArray *feedItems) {
-            
-        } failure:^(NSError *error) {
-            
-        }];
-        
-
-//        [_parser parseRSSFeed:_config.rssUrlString
-//                   parameters:@{}
-//                      success:^(RSSChannel *channel)
-//        {
-//        NSLog(@"Load done from url: %@", _config.rssUrlString);
-//           if (channel && channel.items.count > 0) {
-//               [_arr addObjectsFromArray:channel.items];
-//           }
-//           dispatch_group_leave(_group);
-//        }
-//                      failure:^(NSError *error)
-//        {
-//            NSLog(@"An error occurred: %@", error);
-//            dispatch_group_leave(_group);
+//        [RSSParser parseRSSFeedForRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:_config.rssUrlString]] success:^(NSArray *feedItems) {
+//
+//        } failure:^(NSError *error) {
+//
 //        }];
+        
+                    
+        RSSParser* _parser = [RSSParser new];
+
+        [_parser parseRSSFeed:_config.rssUrlString
+                   parameters:@{}
+                      success:^(RSSChannel *channel)
+        {
+        NSLog(@"Load done from url: %@", _config.rssUrlString);
+           if (channel && channel.items.count > 0) {
+               [_arr addObject:channel];
+           }
+           dispatch_group_leave(_group);
+        }
+                      failure:^(NSError *error)
+        {
+            _error = error;
+            NSLog(@"An error occurred: %@", error);
+            dispatch_group_leave(_group);
+        }];
     }
 
     dispatch_group_notify(_group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        completion(_arr);
+        completion(_arr, _error);
     });
     
 }

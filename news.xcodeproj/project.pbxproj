@@ -33,6 +33,7 @@
 		8B64DD9D238B0D20007F970F /* ThemeMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD9C238B0D20007F970F /* ThemeMain.m */; };
 		8B64DDA0238B0D5C007F970F /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD9F238B0D5C007F970F /* ThemeManager.m */; };
 		8B98C045238EFAF1005745E1 /* UILabel+LabelHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B98C044238EFAF1005745E1 /* UILabel+LabelHeight.m */; };
+		8B98C048238F183E005745E1 /* ImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B98C047238F183E005745E1 /* ImageProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		8B64DD9F238B0D5C007F970F /* ThemeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
 		8B98C043238EFAF0005745E1 /* UILabel+LabelHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHeight.h"; sourceTree = "<group>"; };
 		8B98C044238EFAF1005745E1 /* UILabel+LabelHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LabelHeight.m"; sourceTree = "<group>"; };
+		8B98C046238F183E005745E1 /* ImageProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageProvider.h; sourceTree = "<group>"; };
+		8B98C047238F183E005745E1 /* ImageProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +294,8 @@
 				8B64DD5D238B05F6007F970F /* Main.storyboard */,
 				8B64DD63238B05FB007F970F /* Assets.xcassets */,
 				8B64DD65238B05FB007F970F /* LaunchScreen.storyboard */,
+				8B98C046238F183E005745E1 /* ImageProvider.h */,
+				8B98C047238F183E005745E1 /* ImageProvider.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -529,6 +534,7 @@
 			files = (
 				8B64DD98238B0C67007F970F /* BaseVC.m in Sources */,
 				8B64DD6A238B05FB007F970F /* main.m in Sources */,
+				8B98C048238F183E005745E1 /* ImageProvider.m in Sources */,
 				8B35E27E238C4FBF001890A5 /* NewsCell.m in Sources */,
 				8B64DDA0238B0D5C007F970F /* ThemeManager.m in Sources */,
 				8B98C045238EFAF1005745E1 /* UILabel+LabelHeight.m in Sources */,

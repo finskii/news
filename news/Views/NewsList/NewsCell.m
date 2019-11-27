@@ -80,8 +80,10 @@
         self.labelSource.text = @"source";
     }
     
-    if ([_item mediaThumbnails]) {
+    if ([_item mediaThumbnails].count > 0) {
         [self loadImage:[[_item mediaThumbnails] firstObject]];
+    } else {
+        self.imageViewPreview.image = [ImageProvider imageEmptyPreview];
     }
 }
 

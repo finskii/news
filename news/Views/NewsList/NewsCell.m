@@ -8,6 +8,15 @@
 
 #import "NewsCell.h"
 
+@interface NewsCell()
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewPreview;
+@property (weak, nonatomic) IBOutlet UILabel *labelSource;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelShortDescription;
+
+@end
+
 @implementation NewsCell
 
 - (void)awakeFromNib {

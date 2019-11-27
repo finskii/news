@@ -34,6 +34,7 @@
 		8B64DDA0238B0D5C007F970F /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD9F238B0D5C007F970F /* ThemeManager.m */; };
 		8B98C045238EFAF1005745E1 /* UILabel+LabelHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B98C044238EFAF1005745E1 /* UILabel+LabelHeight.m */; };
 		8B98C048238F183E005745E1 /* ImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B98C047238F183E005745E1 /* ImageProvider.m */; };
+		8B98C04B238F1988005745E1 /* TextPeovider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B98C04A238F1988005745E1 /* TextPeovider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,8 @@
 		8B98C044238EFAF1005745E1 /* UILabel+LabelHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LabelHeight.m"; sourceTree = "<group>"; };
 		8B98C046238F183E005745E1 /* ImageProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageProvider.h; sourceTree = "<group>"; };
 		8B98C047238F183E005745E1 /* ImageProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageProvider.m; sourceTree = "<group>"; };
+		8B98C049238F1988005745E1 /* TextPeovider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextPeovider.h; sourceTree = "<group>"; };
+		8B98C04A238F1988005745E1 /* TextPeovider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextPeovider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +299,8 @@
 				8B64DD65238B05FB007F970F /* LaunchScreen.storyboard */,
 				8B98C046238F183E005745E1 /* ImageProvider.h */,
 				8B98C047238F183E005745E1 /* ImageProvider.m */,
+				8B98C049238F1988005745E1 /* TextPeovider.h */,
+				8B98C04A238F1988005745E1 /* TextPeovider.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -543,6 +548,7 @@
 				8B64DD5C238B05F6007F970F /* ViewController.m in Sources */,
 				8B64DD56238B05F6007F970F /* AppDelegate.m in Sources */,
 				8B35E287238C51D6001890A5 /* APIService.m in Sources */,
+				8B98C04B238F1988005745E1 /* TextPeovider.m in Sources */,
 				8B35E28F238C52B1001890A5 /* RequestConfig.m in Sources */,
 				8B35E278238C4D8B001890A5 /* NewsListVC.m in Sources */,
 				8B64DD62238B05F6007F970F /* news.xcdatamodeld in Sources */,

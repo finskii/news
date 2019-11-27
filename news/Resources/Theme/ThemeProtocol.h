@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import "UILabel+LabelHeight.h"
+#import <SDWebImage/SDWebImage.h>
+#import "ImageProvider.h"
+#import "TextPeovider.h"
 
 @protocol ThemeProtocol <NSObject>
 
+- (void) labelItemState:(UILabel*)label
+                 isRead:(BOOL)isRead;
 
 @end

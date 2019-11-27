@@ -9,6 +9,7 @@
 #import "NewsListVC.h"
 #import "NewsCell.h"
 #import "NewsInteractor.h"
+#import "ThemeManager.h"
 
 @interface NewsListVC() <UITableViewDelegate, UITableViewDataSource>
 
@@ -33,7 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = [TextPeovider navBarTitleNewsList];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     

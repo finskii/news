@@ -33,7 +33,7 @@
     } else {
         label.text = @"source";
     }
-    _height += [label heightForWidth:_width - 159];
+    _height += [label heightForWidth:_width - 169];
     label.text = item.title;
     _height += [label heightForWidth:_width - 130];
     
@@ -92,13 +92,16 @@
     if (isFullView) {
         self.labelShortDescription.text = _item.itemDescription;
         self.labelShortDescription.hidden = NO;
-        self.labelState.text = @"read";
+        [ThemeManager.shared.theme labelItemState:self.labelState isRead:YES];
     } else {
         self.labelShortDescription.text = nil;
         self.labelShortDescription.hidden = YES;
-        self.labelState.text = @"new";
+        [ThemeManager.shared.theme labelItemState:self.labelState isRead:NO];
 
     }
+}
+
+- (void) fillDesign {
 }
 
 - (void) loadImage:(NSURL*)url {

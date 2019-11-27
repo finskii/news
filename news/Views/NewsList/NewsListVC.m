@@ -67,7 +67,7 @@
     } else {
         self.selectedItem = item;
     }
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
 }
 
 - (BOOL) shouldBeFullView:(RSSItem*)item {
@@ -115,6 +115,7 @@
     if (indexPath.row < self.arrNews.count) {
         [self updateSelectedItem:[self.arrNews objectAtIndex:indexPath.row]];
     }
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 

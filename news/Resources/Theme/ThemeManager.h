@@ -7,6 +7,8 @@
 //
 
 #import "ThemeProtocol.h"
+#import "UILabel+LabelHeight.h"
+#import <SDWebImage/SDWebImage.h>
 
 typedef NS_ENUM(NSInteger, ThemeTypes) {
     ThemeTypeMain = 0

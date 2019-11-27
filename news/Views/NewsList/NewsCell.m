@@ -7,6 +7,7 @@
 //
 
 #import "NewsCell.h"
+#import "ThemeManager.h"
 
 @interface NewsCell()
 
@@ -19,15 +20,30 @@
 
 @implementation NewsCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
++ (NSInteger) heightForEntity:(RSSItem*)item
+                   isFullView:(BOOL)isFullView {
+    
+    NSInteger _height = 10+5+5+10;
+    NSInteger _width = UIScreen.mainScreen.bounds.size.width;
+
+    UILabel* label = [UILabel new];
+    label.text = item.title;
+    _height += [label heightForWidth:_width - 159];
+    label.text = @"источник";
+    _height += [label heightForWidth:_width - 110];
+    
+    if (isFullView) {
+        label.text = item.itemDescription;
+        _height += [label heightForWidth:_width - 110];
+    }
+    
+    return _height;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.labelShortDescription.hidden = YES;
 
-    // Configure the view for the selected state
 }
 
 - (void)prepareForReuse {
@@ -39,8 +55,34 @@
     if ([item.guid isEqualToString:_item.guid]) {
         return;
     }
+    
     _item = item;
     
+    self.labelTitle.text = _item.title;
+    self.labelSource.text = @"источник";
+    self.labelShortDescription.text = _item.itemDescription;
+    
+    [self loadImage:_item.link];
+    
+}
+
+- (void)setIsFullView:(BOOL)isFullView {
+    self.labelShortDescription.hidden = !isFullView;
+}
+
+- (void) loadImage:(NSURL*)url {
+    
+    __weak typeof(self) _weakSelf = self;
+    
+    [self.imageViewPreview sd_setImageWithURL:url completed:^(UIImage * image, NSError * error, SDImageCacheType cacheType, NSURL * imageURL)
+    {
+        if (!error &&
+            image &&
+            [imageURL.absoluteString isEqualToString:url.absoluteString])
+        {
+            _weakSelf.imageViewPreview.image = image;
+        }
+    }];
 }
 
 @end

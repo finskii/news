@@ -59,7 +59,7 @@
         }];
     }
 
-    dispatch_group_notify(_group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+    dispatch_group_notify(_group, dispatch_get_main_queue(), ^{
         completion(_arr, _error);
     });
     

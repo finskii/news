@@ -6,7 +6,7 @@ target 'news' do
     use_frameworks!
     
     pod 'MediaRSSParser'
-    pod 'HTMLKit', '~> 3.1'
-
+    pod 'SDWebImage', '~> 5.3'
+p
     
 end

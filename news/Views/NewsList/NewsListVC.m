@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray* arrNews;
+@property (nonatomic, strong) RSSItem* selectedItem;
 
 @end
 
@@ -32,6 +33,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([NewsCell class])
                                                bundle:NSBundle.mainBundle]
@@ -56,6 +60,18 @@
 
 #pragma mark - private
 
+- (void) updateSelectedItem:(RSSItem*)item {
+    if ([self.selectedItem.guid isEqualToString:item.guid]) {
+        self.selectedItem = nil;
+    } else {
+        self.selectedItem = item;
+    }
+    [self.tableView reloadData];
+}
+
+- (BOOL) shouldBeFullView:(RSSItem*)item {
+    return [item.guid isEqualToString:self.selectedItem.guid];
+}
 
 #pragma mark - handlers
 
@@ -67,7 +83,13 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    if (indexPath.row < self.arrNews.count) {
+        RSSItem* _item = [self.arrNews objectAtIndex:indexPath.row];
+        return [NewsCell heightForEntity:_item
+                              isFullView:[self shouldBeFullView:_item]];
+    } else {
+        return 0;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -78,12 +100,20 @@
     NewsCell* _cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([NewsCell class])
                                                       forIndexPath:indexPath];
     
+    if (indexPath.row < self.arrNews.count) {
+        RSSItem* _item = [self.arrNews objectAtIndex:indexPath.row];
+        _cell.item = _item;
+        _cell.isFullView = [self shouldBeFullView:_item];
+    }
     
     return _cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    //decided to fullSize in an easy way wo protocol
+    if (indexPath.row < self.arrNews.count) {
+        [self updateSelectedItem:[self.arrNews objectAtIndex:indexPath.row]];
+    }
 }
 
 

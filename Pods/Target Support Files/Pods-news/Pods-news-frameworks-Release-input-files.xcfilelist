@@ -1,4 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-news/Pods-news-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
-${BUILT_PRODUCTS_DIR}/HTMLKit/HTMLKit.framework
 ${BUILT_PRODUCTS_DIR}/MediaRSSParser/MediaRSSParser.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework

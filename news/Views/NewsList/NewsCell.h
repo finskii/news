@@ -11,7 +11,11 @@
 
 @interface NewsCell : UITableViewCell
     
++ (NSInteger) heightForEntity:(RSSItem*)item
+                   isFullView:(BOOL)isFullView;
+
 @property (nonatomic, strong) RSSItem* item;
+@property (nonatomic, assign) BOOL isFullView;
 
 @end
 

@@ -32,6 +32,7 @@
 		8B64DD98238B0C67007F970F /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD97238B0C67007F970F /* BaseVC.m */; };
 		8B64DD9D238B0D20007F970F /* ThemeMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD9C238B0D20007F970F /* ThemeMain.m */; };
 		8B64DDA0238B0D5C007F970F /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD9F238B0D5C007F970F /* ThemeManager.m */; };
+		8B98C045238EFAF1005745E1 /* UILabel+LabelHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B98C044238EFAF1005745E1 /* UILabel+LabelHeight.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		8B64DD9C238B0D20007F970F /* ThemeMain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeMain.m; sourceTree = "<group>"; };
 		8B64DD9E238B0D5C007F970F /* ThemeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
 		8B64DD9F238B0D5C007F970F /* ThemeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
+		8B98C043238EFAF0005745E1 /* UILabel+LabelHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHeight.h"; sourceTree = "<group>"; };
+		8B98C044238EFAF1005745E1 /* UILabel+LabelHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LabelHeight.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +226,7 @@
 				8B64DD8C238B0A0C007F970F /* Data */,
 				8B64DD8D238B0A18007F970F /* Views */,
 				8B64DD8E238B0A25007F970F /* Router */,
+				8B98C042238EFABF005745E1 /* Helpers */,
 				8B64DD8F238B0A38007F970F /* Resources */,
 				8B64DD90238B0A41007F970F /* Supporting Files */,
 				8B55B6FD238E87F80011D867 /* news-Bridging-Header.h */,
@@ -334,6 +338,15 @@
 				8B64DD9F238B0D5C007F970F /* ThemeManager.m */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		8B98C042238EFABF005745E1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8B98C043238EFAF0005745E1 /* UILabel+LabelHeight.h */,
+				8B98C044238EFAF1005745E1 /* UILabel+LabelHeight.m */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,6 +531,7 @@
 				8B64DD6A238B05FB007F970F /* main.m in Sources */,
 				8B35E27E238C4FBF001890A5 /* NewsCell.m in Sources */,
 				8B64DDA0238B0D5C007F970F /* ThemeManager.m in Sources */,
+				8B98C045238EFAF1005745E1 /* UILabel+LabelHeight.m in Sources */,
 				8B64DD95238B0BC8007F970F /* BaseRouter.m in Sources */,
 				8B35E274238C4D45001890A5 /* Router.m in Sources */,
 				8B64DD5C238B05F6007F970F /* ViewController.m in Sources */,

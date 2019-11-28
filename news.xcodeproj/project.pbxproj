@@ -19,6 +19,8 @@
 		8B35E287238C51D6001890A5 /* APIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35E286238C51D6001890A5 /* APIService.m */; };
 		8B35E28B238C51FD001890A5 /* NewsInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35E28A238C51FD001890A5 /* NewsInteractor.m */; };
 		8B35E28F238C52B1001890A5 /* RequestConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35E28E238C52B1001890A5 /* RequestConfig.m */; };
+		8B597960238FDD4900005B31 /* NewsItem+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B59795D238FDD4800005B31 /* NewsItem+CoreDataClass.m */; };
+		8B597961238FDD4900005B31 /* NewsItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B59795E238FDD4900005B31 /* NewsItem+CoreDataProperties.m */; };
 		8B64DD56238B05F6007F970F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD55238B05F6007F970F /* AppDelegate.m */; };
 		8B64DD5C238B05F6007F970F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64DD5B238B05F6007F970F /* ViewController.m */; };
 		8B64DD5F238B05F6007F970F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B64DD5D238B05F6007F970F /* Main.storyboard */; };
@@ -78,6 +80,10 @@
 		8B35E28D238C52B1001890A5 /* RequestConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestConfig.h; sourceTree = "<group>"; };
 		8B35E28E238C52B1001890A5 /* RequestConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestConfig.m; sourceTree = "<group>"; };
 		8B55B6FD238E87F80011D867 /* news-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "news-Bridging-Header.h"; sourceTree = "<group>"; };
+		8B59795C238FDD4800005B31 /* NewsItem+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NewsItem+CoreDataClass.h"; path = "/Users/finskii/Documents/xcodeproj/objective-c/news/news/Data/Entities/NewsItem+CoreDataClass.h"; sourceTree = "<absolute>"; };
+		8B59795D238FDD4800005B31 /* NewsItem+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NewsItem+CoreDataClass.m"; path = "/Users/finskii/Documents/xcodeproj/objective-c/news/news/Data/Entities/NewsItem+CoreDataClass.m"; sourceTree = "<absolute>"; };
+		8B59795E238FDD4900005B31 /* NewsItem+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NewsItem+CoreDataProperties.m"; path = "/Users/finskii/Documents/xcodeproj/objective-c/news/news/Data/Entities/NewsItem+CoreDataProperties.m"; sourceTree = "<absolute>"; };
+		8B59795F238FDD4900005B31 /* NewsItem+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NewsItem+CoreDataProperties.h"; path = "/Users/finskii/Documents/xcodeproj/objective-c/news/news/Data/Entities/NewsItem+CoreDataProperties.h"; sourceTree = "<absolute>"; };
 		8B64DD51238B05F6007F970F /* news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B64DD54238B05F6007F970F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8B64DD55238B05F6007F970F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -198,6 +204,10 @@
 		8B35E28C238C5299001890A5 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				8B59795F238FDD4900005B31 /* NewsItem+CoreDataProperties.h */,
+				8B59795C238FDD4800005B31 /* NewsItem+CoreDataClass.h */,
+				8B59795D238FDD4800005B31 /* NewsItem+CoreDataClass.m */,
+				8B59795E238FDD4900005B31 /* NewsItem+CoreDataProperties.m */,
 				8B35E28D238C52B1001890A5 /* RequestConfig.h */,
 				8B35E28E238C52B1001890A5 /* RequestConfig.m */,
 			);
@@ -545,6 +555,7 @@
 				8B98C045238EFAF1005745E1 /* UILabel+LabelHeight.m in Sources */,
 				8B64DD95238B0BC8007F970F /* BaseRouter.m in Sources */,
 				8B35E274238C4D45001890A5 /* Router.m in Sources */,
+				8B597961238FDD4900005B31 /* NewsItem+CoreDataProperties.m in Sources */,
 				8B64DD5C238B05F6007F970F /* ViewController.m in Sources */,
 				8B64DD56238B05F6007F970F /* AppDelegate.m in Sources */,
 				8B35E287238C51D6001890A5 /* APIService.m in Sources */,
@@ -552,6 +563,7 @@
 				8B35E28F238C52B1001890A5 /* RequestConfig.m in Sources */,
 				8B35E278238C4D8B001890A5 /* NewsListVC.m in Sources */,
 				8B64DD62238B05F6007F970F /* news.xcdatamodeld in Sources */,
+				8B597960238FDD4900005B31 /* NewsItem+CoreDataClass.m in Sources */,
 				8B35E271238C4D00001890A5 /* BaseNVC.m in Sources */,
 				8B35E284238C51C6001890A5 /* DBService.m in Sources */,
 				8B64DD9D238B0D20007F970F /* ThemeMain.m in Sources */,

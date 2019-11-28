@@ -26,4 +26,19 @@
     return @"settings";
 }
 
++ (NSString *)navBarTitleSettingst {
+    return @"Settings";
+}
+
++ (NSString *)updateInterval {
+    return @"Feed update interval in minutes";
+}
+
++ (NSString *)displayInterval {
+    return @"Feed display interval in days";
+}
++ (NSString *)displaySource {
+    return @"Feed source";
+}
+
 @end

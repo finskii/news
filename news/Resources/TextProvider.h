@@ -16,5 +16,10 @@
 + (NSString*) stateRead;
 + (NSString*) settings;
 
++ (NSString *)navBarTitleSettingst;
++ (NSString *)updateInterval;
++ (NSString *)displayInterval;
++ (NSString *)displaySource;
+
 @end
 

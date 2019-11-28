@@ -25,16 +25,20 @@ static NSString* urlGazeta = @"http://www.gazeta.ru/export/rss/lenta.xml";
     
     [APIService loadDataWithConfig:@[_config1, _config2] completion:^(NSArray *arrChannels, NSError* error) {
         NSMutableArray* _arrNewsItems = [NSMutableArray new];
+        NSMutableArray* _arrChannelTitles = [NSMutableArray new];
         if (!error) {
             for (RSSChannel* _channel in arrChannels) {
+                [_arrChannelTitles addObject:_channel.title];
                 for (RSSItem* _item in _channel.items) {
-                    if (!_item.authorEmail) {
-                        _item.authorEmail = _channel.title;
-                    }
+                    _item.authorEmail = _channel.title;
                     [_arrNewsItems addObject:[[NewsItem alloc] initWithRSSItem:_item]];
                 }
             }
-            [DBService saveNews:_arrNewsItems];
+            
+            
+            
+            [DBService saveSources:_arrChannelTitles.copy];
+            [DBService saveNews:_arrNewsItems.copy];
         }
         completion([DBService allNews], error);
     }];

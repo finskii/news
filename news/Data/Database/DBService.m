@@ -30,4 +30,29 @@
     return [[NewsItem allObjects] sortedResultsUsingKeyPath:@"creationDate" ascending:NO];
 }
 
+
+
++ (void) saveSources:(NSArray*)sources {
+    [[RLMRealm defaultRealm] beginWriteTransaction];
+    [[RLMRealm defaultRealm] addObjects:sources];
+    [[RLMRealm defaultRealm] commitWriteTransaction];
+}
+
++ (RLMResults<ChannelSource*>*) allSources {
+    return [ChannelSource allObjects];
+}
+
+
++ (void) saveSettings:(Settings*)settings {
+    [[RLMRealm defaultRealm] beginWriteTransaction];
+    [[RLMRealm defaultRealm] addObject:settings];
+    [[RLMRealm defaultRealm] commitWriteTransaction];
+}
+
++ (RLMResults<Settings*>*) settings {
+    return [Settings allObjects];
+}
+
+
+
 @end

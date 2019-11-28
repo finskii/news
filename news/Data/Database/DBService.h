@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "NewsItem.h"
+#import "Settings.h"
+#import "ChannelSource.h"
 #import <Realm/Realm.h>
 
 @interface DBService : NSObject
@@ -15,7 +17,11 @@
 + (void) saveNews:(NSArray<NewsItem *> *)arrNews;
 + (void) setNewsItemToReadState:(NewsItem*)item;
 
++ (void) saveSources:(NSSet*)sources;
+
 + (RLMResults<NewsItem *>*) allNews;
++ (RLMResults*) allSources;
+
 
 @end
 

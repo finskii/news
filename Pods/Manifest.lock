@@ -22,25 +22,29 @@ PODS:
     - AFNetworking/NSURLSession
   - MediaRSSParser (1.0.1):
     - AFNetworking (~> 2.0)
+  - Realm/Headers (4.1.1)
   - SDWebImage (5.3.2):
     - SDWebImage/Core (= 5.3.2)
   - SDWebImage/Core (5.3.2)
 
 DEPENDENCIES:
   - MediaRSSParser
+  - Realm/Headers
   - SDWebImage (~> 5.3)
 
 SPEC REPOS:
   trunk:
     - AFNetworking
     - MediaRSSParser
+    - Realm
     - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
   MediaRSSParser: 5d73c6a4278448b7f56fba73c97b5ffaf4ead72c
+  Realm: 25f0a8244cbb1c2271c922963ea8666fc2d8104d
   SDWebImage: 6ac2eb96571bff96ecde31a987172c5934a0eb7d
 
-PODFILE CHECKSUM: fe5f2fdca73694a63eed3474bf87753e4d585331
+PODFILE CHECKSUM: e95a19c31b29e82f8edaaa3116c7b6293958c588
 
 COCOAPODS: 1.8.4

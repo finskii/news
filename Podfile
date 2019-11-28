@@ -7,6 +7,6 @@ target 'news' do
     
     pod 'MediaRSSParser'
     pod 'SDWebImage', '~> 5.3'
-p
+    pod 'Realm/Headers'
     
 end

@@ -40,16 +40,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    __weak typeof(self) _weakSelf = self;
-    
-    [NewsInteractor loadNews:^(RLMResults<NewsItem *> *news, NSObject *error) {
-        if (!error) {
-            _weakSelf.arrNews = news;
-            [_weakSelf.tableView reloadData];
-        } else {
-            
-        }
-    }];
+    [self loadData];
 }
 
 #pragma mark - private
@@ -62,6 +53,20 @@
         [NewsInteractor setNewsItemToReadState:self.selectedItem];
     }
 }
+
+- (void)loadData {
+    __weak typeof(self) _weakSelf = self;
+    
+    [NewsInteractor loadNews:^(RLMResults<NewsItem *> *news, NSObject *error) {
+        if (!error) {
+            _weakSelf.arrNews = news;
+            [_weakSelf.tableView reloadData];
+        } else {
+            
+        }
+    }];
+}
+
 
 - (BOOL) shouldBeFullView:(NewsItem*)item {
     return [item.guid isEqualToString:self.selectedItem.guid];

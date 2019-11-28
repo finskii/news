@@ -59,6 +59,7 @@
         self.selectedItem = nil;
     } else {
         self.selectedItem = item;
+        [NewsInteractor setNewsItemToReadState:self.selectedItem];
     }
 }
 

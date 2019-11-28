@@ -19,7 +19,7 @@
 @property (nonatomic, strong) NSDate* creationDate;
 @property (nonatomic, strong) NSString* source;
 @property (nonatomic, strong) NSString* imageUrl;
-@property (nonatomic, strong) NSNumber* isRead;
+@property (nonatomic, strong) NSString* isRead;
 
 @end
 

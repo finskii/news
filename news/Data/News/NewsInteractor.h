@@ -13,6 +13,7 @@
 @interface NewsInteractor : NSObject
 
 + (void) loadNews:(void(^)(RLMResults<NewsItem*>* news, NSObject* error))completion;
++ (void) setNewsItemToReadState:(NewsItem*)item;
 
 @end
 

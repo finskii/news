@@ -40,4 +40,8 @@ static NSString* urlGazeta = @"http://www.gazeta.ru/export/rss/lenta.xml";
     }];
 }
 
++ (void) setNewsItemToReadState:(NewsItem*)item {
+    [DBService setNewsItemToReadState:item];
+}
+
 @end

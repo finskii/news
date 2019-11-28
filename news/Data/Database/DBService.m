@@ -12,20 +12,22 @@
 
 + (void)saveNews:(NSArray<NewsItem *> *)arrNews {
     [[RLMRealm defaultRealm] beginWriteTransaction];
-    [[RLMRealm defaultRealm] addObjects:arrNews];
+    @try {
+        [[RLMRealm defaultRealm] addObjects:arrNews];
+    } @catch (NSException *exception) {
+        NSLog(@"got a duplicate");
+    }
     [[RLMRealm defaultRealm] commitWriteTransaction];
 }
 
-+ (void) updateNewsItem:(NewsItem*)item {
++ (void) setNewsItemToReadState:(NewsItem*)item {
     [[RLMRealm defaultRealm] beginWriteTransaction];
-    [[RLMRealm defaultRealm] addOrUpdateObject:item];
+    item.isRead = @"YES";
     [[RLMRealm defaultRealm] commitWriteTransaction];
 }
 
 + (RLMResults<NewsItem *>*) allNews {
-
     return [NewsItem allObjects];// objectsWhere:@"color = 'tan' AND name BEGINSWITH 'B'"];
-
 }
 
 @end

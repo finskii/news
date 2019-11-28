@@ -13,7 +13,7 @@
 @interface DBService : NSObject
 
 + (void) saveNews:(NSArray<NewsItem *> *)arrNews;
-+ (void) updateNewsItem:(NewsItem*)item;
++ (void) setNewsItemToReadState:(NewsItem*)item;
 
 + (RLMResults<NewsItem *>*) allNews;
 

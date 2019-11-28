@@ -22,6 +22,8 @@
         if (item.imagesFromItemDescription.count > 0) {
             self.imageUrl = item.imagesFromItemDescription.firstObject;
         }
+        
+        
     }
     
     return self;

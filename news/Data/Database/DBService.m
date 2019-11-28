@@ -27,7 +27,7 @@
 }
 
 + (RLMResults<NewsItem *>*) allNews {
-    return [NewsItem allObjects];// objectsWhere:@"color = 'tan' AND name BEGINSWITH 'B'"];
+    return [[NewsItem allObjects] sortedResultsUsingKeyPath:@"creationDate" ascending:NO];
 }
 
 @end

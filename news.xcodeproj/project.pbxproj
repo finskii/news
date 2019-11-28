@@ -35,6 +35,8 @@
 		8B98C045238EFAF1005745E1 /* UILabel+LabelHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B98C044238EFAF1005745E1 /* UILabel+LabelHeight.m */; };
 		8B98C048238F183E005745E1 /* ImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B98C047238F183E005745E1 /* ImageProvider.m */; };
 		8B98C04B238F1988005745E1 /* TextProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B98C04A238F1988005745E1 /* TextProvider.m */; };
+		8B9CDDC123905AB400FA8E49 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDDC023905AB400FA8E49 /* SettingsVC.m */; };
+		8B9CDDC423905BA900FA8E49 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDDC323905BA900FA8E49 /* Settings.m */; };
 		8BB8235623903DBE00859DEC /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8235523903DBE00859DEC /* NewsItem.m */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +127,10 @@
 		8B98C047238F183E005745E1 /* ImageProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageProvider.m; sourceTree = "<group>"; };
 		8B98C049238F1988005745E1 /* TextProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextProvider.h; sourceTree = "<group>"; };
 		8B98C04A238F1988005745E1 /* TextProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextProvider.m; sourceTree = "<group>"; };
+		8B9CDDBF23905AB400FA8E49 /* SettingsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
+		8B9CDDC023905AB400FA8E49 /* SettingsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
+		8B9CDDC223905BA900FA8E49 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		8B9CDDC323905BA900FA8E49 /* Settings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		8BB8235423903DBE00859DEC /* NewsItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsItem.h; sourceTree = "<group>"; };
 		8BB8235523903DBE00859DEC /* NewsItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsItem.m; sourceTree = "<group>"; };
 		8BCC045723904F78009793F0 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +233,8 @@
 				8B35E28E238C52B1001890A5 /* RequestConfig.m */,
 				8BB8235423903DBE00859DEC /* NewsItem.h */,
 				8BB8235523903DBE00859DEC /* NewsItem.m */,
+				8B9CDDC223905BA900FA8E49 /* Settings.h */,
+				8B9CDDC323905BA900FA8E49 /* Settings.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -301,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				8B64DD91238B0B7F007F970F /* Base */,
+				8B9CDDBE23905A9200FA8E49 /* Settings */,
 				8B35E275238C4D6E001890A5 /* NewsList */,
 			);
 			path = Views;
@@ -384,6 +393,15 @@
 				8B98C044238EFAF1005745E1 /* UILabel+LabelHeight.m */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8B9CDDBE23905A9200FA8E49 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8B9CDDBF23905AB400FA8E49 /* SettingsVC.h */,
+				8B9CDDC023905AB400FA8E49 /* SettingsVC.m */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B64DD98238B0C67007F970F /* BaseVC.m in Sources */,
+				8B9CDDC123905AB400FA8E49 /* SettingsVC.m in Sources */,
 				8B64DD6A238B05FB007F970F /* main.m in Sources */,
 				8B98C048238F183E005745E1 /* ImageProvider.m in Sources */,
 				8B35E27E238C4FBF001890A5 /* NewsCell.m in Sources */,
@@ -584,6 +603,7 @@
 				8B64DD9D238B0D20007F970F /* ThemeMain.m in Sources */,
 				8BB8235623903DBE00859DEC /* NewsItem.m in Sources */,
 				8B35E28B238C51FD001890A5 /* NewsInteractor.m in Sources */,
+				8B9CDDC423905BA900FA8E49 /* Settings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

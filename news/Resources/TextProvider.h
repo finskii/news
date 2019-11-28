@@ -14,6 +14,7 @@
 + (NSString*) navBarTitleNewsList;
 + (NSString*) stateNew;
 + (NSString*) stateRead;
++ (NSString*) settings;
 
 @end
 

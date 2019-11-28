@@ -6,12 +6,11 @@
 //  Copyright © 2019 Vasilii Dmitriev. All rights reserved.
 //
 
-#import <MediaRSSParser/MediaRSSParser.h>
+#import "BaseVC.h"
 
-NS_ASSUME_NONNULL_BEGIN
 
-@interface SettingsVC : RSSItem
+@interface SettingsVC : BaseVC
 
 @end
 
-NS_ASSUME_NONNULL_END
+

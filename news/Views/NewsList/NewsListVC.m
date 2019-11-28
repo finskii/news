@@ -9,7 +9,7 @@
 #import "NewsListVC.h"
 #import "NewsCell.h"
 #import "NewsInteractor.h"
-#import "ThemeManager.h"
+#import "Router.h"
 
 @interface NewsListVC() <UITableViewDelegate, UITableViewDataSource>
 
@@ -28,6 +28,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = [TextProvider navBarTitleNewsList];
+    
+    UIBarButtonItem* _buttonSettings = [[UIBarButtonItem alloc] initWithTitle:[TextProvider settings] style:UIBarButtonItemStylePlain target:self action:@selector(openSettings)];
+    self.navigationItem.rightBarButtonItem = _buttonSettings;
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -74,6 +78,9 @@
 
 #pragma mark - handlers
 
+- (void) openSettings {
+    [Router pushSettingsFrom:self];
+}
 
 #pragma mark - <UITableViewDelegate, UITableViewDataSource>
 

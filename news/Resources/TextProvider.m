@@ -22,4 +22,8 @@
     return @"read";
 }
 
++ (NSString *)settings {
+    return @"settings";
+}
+
 @end

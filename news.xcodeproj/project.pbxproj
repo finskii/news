@@ -38,6 +38,7 @@
 		8B9CDDC123905AB400FA8E49 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDDC023905AB400FA8E49 /* SettingsVC.m */; };
 		8B9CDDC423905BA900FA8E49 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDDC323905BA900FA8E49 /* Settings.m */; };
 		8B9CDDC723905D9A00FA8E49 /* ChannelSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDDC623905D9A00FA8E49 /* ChannelSource.m */; };
+		8B9CDDC92390609500FA8E49 /* SettingsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9CDDC82390609500FA8E49 /* SettingsVC.storyboard */; };
 		8BB8235623903DBE00859DEC /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8235523903DBE00859DEC /* NewsItem.m */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +135,7 @@
 		8B9CDDC323905BA900FA8E49 /* Settings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		8B9CDDC523905D9A00FA8E49 /* ChannelSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChannelSource.h; sourceTree = "<group>"; };
 		8B9CDDC623905D9A00FA8E49 /* ChannelSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChannelSource.m; sourceTree = "<group>"; };
+		8B9CDDC82390609500FA8E49 /* SettingsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsVC.storyboard; sourceTree = "<group>"; };
 		8BB8235423903DBE00859DEC /* NewsItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsItem.h; sourceTree = "<group>"; };
 		8BB8235523903DBE00859DEC /* NewsItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsItem.m; sourceTree = "<group>"; };
 		8BCC045723904F78009793F0 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -405,6 +407,7 @@
 			children = (
 				8B9CDDBF23905AB400FA8E49 /* SettingsVC.h */,
 				8B9CDDC023905AB400FA8E49 /* SettingsVC.m */,
+				8B9CDDC82390609500FA8E49 /* SettingsVC.storyboard */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B35E27F238C4FBF001890A5 /* NewsCell.xib in Resources */,
+				8B9CDDC92390609500FA8E49 /* SettingsVC.storyboard in Resources */,
 				8B64DD67238B05FB007F970F /* LaunchScreen.storyboard in Resources */,
 				8B35E26E238C4B9E001890A5 /* Default-568h@2x.png in Resources */,
 				8B64DD64238B05FB007F970F /* Assets.xcassets in Resources */,

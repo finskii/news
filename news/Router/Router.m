@@ -8,6 +8,7 @@
 
 #import "Router.h"
 #import "NewsListVC.h"
+#import "SettingsVC.h"
 
 @implementation Router
 
@@ -20,6 +21,13 @@
     window.rootViewController = _nvc;
     [window makeKeyAndVisible];
 
+}
+
++ (void) pushSettingsFrom:(BaseVC*)fromVC {
+    
+    BaseVC* _vc = [self vcByClass:[SettingsVC class]];
+    [_vc.navigationController.navigationBar setTranslucent:NO];
+    [fromVC.navigationController pushViewController:_vc animated:YES];
 }
 
 @end

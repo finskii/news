@@ -12,6 +12,7 @@
 @interface Router : BaseRouter
 
 + (void) gotoMainViewFrom:(UIWindow*)window;
++ (void) pushSettingsFrom:(BaseVC*)fromVC;
 
 @end
 

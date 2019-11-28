@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "NewsItem.h"
+#import <Realm/Realm.h>
 
 @interface DBService : NSObject
 
++ (void) saveNews:(NSArray<NewsItem *> *)arrNews;
++ (void) updateNewsItem:(NewsItem*)item;
+
++ (RLMResults<NewsItem *>*) allNews;
+
 @end
 
-NS_ASSUME_NONNULL_END

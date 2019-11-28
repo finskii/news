@@ -21,24 +21,21 @@
 
 @implementation NewsCell
 
-+ (NSInteger) heightForEntity:(RSSItem*)item
++ (NSInteger) heightForEntity:(NewsItem*)item
                    isFullView:(BOOL)isFullView {
     
     NSInteger _height = 40;
     NSInteger _width = UIScreen.mainScreen.bounds.size.width;
 
     UILabel* label = [UILabel new];
-    if (item.authorEmail) {
-        label.text = item.authorEmail;
-    } else {
-        label.text = @"source";
-    }
+    label.text = item.source;
+
     _height += [label heightForWidth:_width - 169];
     label.text = item.title;
     _height += [label heightForWidth:_width - 130];
     
     if (isFullView) {
-        label.text = item.itemDescription;
+        label.text = item.shortDescription;
         _height += [label heightForWidth:_width - 120];
     }
     
@@ -63,7 +60,7 @@
     [self.imageViewPreview sd_cancelCurrentImageLoad];
 }
 
-- (void)setItem:(RSSItem *)item {
+- (void)setItem:(NewsItem *)item {
     if ([item.guid isEqualToString:_item.guid]) {
         return;
     }
@@ -71,33 +68,26 @@
     _item = item;
     
     self.labelTitle.text = _item.title;
-    self.labelSource.text = _item.authorEmail;
+    self.labelSource.text = _item.source;
     
-    
-    if (item.authorEmail) {
-        self.labelSource.text = _item.authorEmail;
-    } else {
-        self.labelSource.text = @"source";
-    }
-    
-    if ([_item mediaThumbnails].count > 0) {
-        [self loadImage:[[_item mediaThumbnails] firstObject]];
+    if ([NSURL URLWithString:_item.imageUrl]) {
+        [self loadImage:[NSURL URLWithString:_item.imageUrl]];
     } else {
         self.imageViewPreview.image = [ImageProvider imageEmptyPreview];
     }
+    
+    [ThemeManager.shared.theme labelItemState:self.labelState isRead:_item.isRead && _item.isRead.boolValue];
+    
 }
 
 
 - (void)setIsFullView:(BOOL)isFullView {
     if (isFullView) {
-        self.labelShortDescription.text = _item.itemDescription;
+        self.labelShortDescription.text = _item.shortDescription;
         self.labelShortDescription.hidden = NO;
-        [ThemeManager.shared.theme labelItemState:self.labelState isRead:YES];
     } else {
         self.labelShortDescription.text = nil;
         self.labelShortDescription.hidden = YES;
-        [ThemeManager.shared.theme labelItemState:self.labelState isRead:NO];
-
     }
 }
 

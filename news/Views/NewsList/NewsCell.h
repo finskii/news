@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RSSItem.h"
+#import "NewsItem.h"
 
 @interface NewsCell : UITableViewCell
     
-+ (NSInteger) heightForEntity:(RSSItem*)item
++ (NSInteger) heightForEntity:(NewsItem*)item
                    isFullView:(BOOL)isFullView;
 
-@property (nonatomic, strong) RSSItem* item;
+@property (nonatomic, strong) NewsItem* item;
 @property (nonatomic, assign) BOOL isFullView;
 
 @end

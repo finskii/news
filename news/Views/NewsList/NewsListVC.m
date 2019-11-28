@@ -14,8 +14,8 @@
 @interface NewsListVC() <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray* arrNews;
-@property (nonatomic, strong) RSSItem* selectedItem;
+@property (strong, nonatomic) RLMResults<NewsItem*>* arrNews;
+@property (nonatomic, strong) NewsItem* selectedItem;
 
 @end
 
@@ -23,18 +23,11 @@
 
 #pragma mark - set/get
 
-- (NSArray *)arrNews {
-    if (!_arrNews) {
-        _arrNews = [NSArray new];
-    }
-    return _arrNews;
-}
-
 #pragma mark - override
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = [TextPeovider navBarTitleNewsList];
+    self.title = [TextProvider navBarTitleNewsList];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -49,7 +42,7 @@
     
     __weak typeof(self) _weakSelf = self;
     
-    [NewsInteractor loadNews:^(NSArray *news, NSObject *error) {
+    [NewsInteractor loadNews:^(RLMResults<NewsItem *> *news, NSObject *error) {
         if (!error) {
             _weakSelf.arrNews = news;
             [_weakSelf.tableView reloadData];
@@ -61,7 +54,7 @@
 
 #pragma mark - private
 
-- (void) updateSelectedItem:(RSSItem*)item {
+- (void) updateSelectedItem:(NewsItem*)item {
     if ([self.selectedItem.guid isEqualToString:item.guid]) {
         self.selectedItem = nil;
     } else {
@@ -69,7 +62,7 @@
     }
 }
 
-- (BOOL) shouldBeFullView:(RSSItem*)item {
+- (BOOL) shouldBeFullView:(NewsItem*)item {
     return [item.guid isEqualToString:self.selectedItem.guid];
 }
 
@@ -83,8 +76,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row < self.arrNews.count) {
-        RSSItem* _item = [self.arrNews objectAtIndex:indexPath.row];
+    if (indexPath.row < [self.arrNews count]) {
+        NewsItem* _item = [self.arrNews objectAtIndex:indexPath.row];
         return [NewsCell heightForEntity:_item
                               isFullView:[self shouldBeFullView:_item]];
     } else {
@@ -101,7 +94,7 @@
                                                       forIndexPath:indexPath];
     
     if (indexPath.row < self.arrNews.count) {
-        RSSItem* _item = [self.arrNews objectAtIndex:indexPath.row];
+        NewsItem* _item = [self.arrNews objectAtIndex:indexPath.row];
         _cell.item = _item;
         _cell.isFullView = [self shouldBeFullView:_item];
     }

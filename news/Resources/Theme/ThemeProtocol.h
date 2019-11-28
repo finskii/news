@@ -11,7 +11,7 @@
 #import "UILabel+LabelHeight.h"
 #import <SDWebImage/SDWebImage.h>
 #import "ImageProvider.h"
-#import "TextPeovider.h"
+#import "TextProvider.h"
 
 @protocol ThemeProtocol <NSObject>
 

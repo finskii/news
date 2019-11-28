@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "APIService.h"
+#import "DBService.h"
 
 @interface NewsInteractor : NSObject
 
-+ (void) loadNews:(void(^)(NSArray* news, NSObject* error))completion;
++ (void) loadNews:(void(^)(RLMResults<NewsItem*>* news, NSObject* error))completion;
 
 @end
 

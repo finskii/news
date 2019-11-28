@@ -13,10 +13,10 @@
 - (void)labelItemState:(UILabel *)label
                 isRead:(BOOL)isRead {
     if (isRead) {
-        label.text = [TextPeovider stateRead];
+        label.text = [TextProvider stateRead];
         label.backgroundColor = UIColor.lightGrayColor;
     } else {
-        label.text = [TextPeovider stateNew];
+        label.text = [TextProvider stateNew];
         label.backgroundColor = UIColor.greenColor;
     }
     label.layer.cornerRadius = label.frame.size.height/2;

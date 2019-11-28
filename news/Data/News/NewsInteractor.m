@@ -7,30 +7,36 @@
 //
 
 #import "NewsInteractor.h"
-#import "APIService.h"
+
+static NSString* urlLenta = @"http://lenta.ru/rss";
+static NSString* urlGazeta = @"http://www.gazeta.ru/export/rss/lenta.xml";
 
 @implementation NewsInteractor
 
-+ (void) loadNews:(void(^)(NSArray* news, NSObject* error))completion {
++ (void) loadNews:(void(^)(RLMResults<NewsItem*>* news, NSObject* error))completion {
+    
+    completion([DBService allNews], nil);
     
     RequestConfig* _config1 = [RequestConfig new];
-    _config1.rssUrlString = @"http://lenta.ru/rss";
+    _config1.rssUrlString = urlLenta;
     RequestConfig* _config2 = [RequestConfig new];
-    _config2.rssUrlString = @"http://www.gazeta.ru/export/rss/lenta.xml";
+    _config2.rssUrlString = urlGazeta;
+    
     
     [APIService loadDataWithConfig:@[_config1, _config2] completion:^(NSArray *arrChannels, NSError* error) {
-        NSMutableArray* _arr = [NSMutableArray new];
+        NSMutableArray* _arrNewsItems = [NSMutableArray new];
         if (!error) {
             for (RSSChannel* _channel in arrChannels) {
-                [_arr addObjectsFromArray:_channel.items];
-                for (RSSItem* _item in _arr) {
+                for (RSSItem* _item in _channel.items) {
                     if (!_item.authorEmail) {
                         _item.authorEmail = _channel.title;
                     }
+                    [_arrNewsItems addObject:[[NewsItem alloc] initWithRSSItem:_item]];
                 }
             }
+            [DBService saveNews:_arrNewsItems];
         }
-        completion(_arr, error);
+        completion([DBService allNews], error);
     }];
 }
 

@@ -9,6 +9,7 @@
 #import "NewsListVC.h"
 #import "NewsCell.h"
 #import "NewsInteractor.h"
+#import "SettingsInteractor.h"
 #import "Router.h"
 
 @interface NewsListVC() <UITableViewDelegate, UITableViewDataSource>
@@ -17,6 +18,8 @@
 @property (strong, nonatomic) RLMResults<NewsItem*>* arrNews;
 @property (nonatomic, strong) NewsItem* selectedItem;
 @property (nonatomic, strong) UIRefreshControl* rc;
+@property (nonatomic, strong) Settings* settings;
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -49,11 +52,30 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    self.settings = [SettingsInteractor settings];
     [self loadData];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self invalidateTimer];
+
+}
+
 #pragma mark - private
+
+- (void) invalidateTimer {
+    if (self.timer) {
+        [self.timer invalidate];
+    }
+    self.timer = nil;
+}
+
+-(void)countdownTimer {
+    if (!self.timer) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:60*self.settings.updateInterval.integerValue target:self selector:@selector(loadData) userInfo:nil repeats:YES];
+    }
+}
 
 - (void) updateSelectedItem:(NewsItem*)item {
     if ([self.selectedItem.guid isEqualToString:item.guid]) {
@@ -66,9 +88,10 @@
 
 - (void)loadData {
     __weak typeof(self) _weakSelf = self;
-    
+    [self invalidateTimer];
     [NewsInteractor loadNews:^(RLMResults<NewsItem *> *news, NSObject *error) {
         [_weakSelf.rc endRefreshing];
+        [_weakSelf countdownTimer];
         if (!error) {
             _weakSelf.arrNews = news;
             [_weakSelf.tableView reloadData];
@@ -83,11 +106,17 @@
     return [item.guid isEqualToString:self.selectedItem.guid];
 }
 
+
+
+
 #pragma mark - handlers
 
 - (void) openSettings {
     [Router pushSettingsFrom:self];
 }
+
+
+
 
 #pragma mark - <UITableViewDelegate, UITableViewDataSource>
 

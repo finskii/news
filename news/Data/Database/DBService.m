@@ -34,11 +34,17 @@
         _settings = [Settings new];
     }
     
+    NSDate* _date = [NSDate new];
+    NSTimeInterval _interval = _date.timeIntervalSince1970;
+    
+    _interval = _interval - 24*3600*_settings.displayInterval.integerValue;
+    
     if (![_settings.source isEqualToString:@"id_all"]) {
-            return [[NewsItem objectsWhere:[NSString stringWithFormat:@"source = '%@'", _settings.source]]
+        return [[NewsItem objectsWhere:[NSString stringWithFormat:@"source = '%@' AND creationDateStamp > %f", _settings.source, _interval]]
                 sortedResultsUsingKeyPath:@"creationDate" ascending:NO];
     } else {
-        return [[NewsItem allObjects] sortedResultsUsingKeyPath:@"creationDate" ascending:NO];
+        return [[NewsItem objectsWhere:[NSString stringWithFormat:@"creationDateStamp > %f", _settings.source, _interval]]
+                sortedResultsUsingKeyPath:@"creationDate" ascending:NO];
     }
 }
 

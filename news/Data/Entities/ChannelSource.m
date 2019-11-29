@@ -12,7 +12,7 @@
 
 - (NSString *)uuid {
     if (!_uuid) {
-        _uuid = @"all_id";
+        _uuid = @"id_all";
     }
     return _uuid;
 }

@@ -34,7 +34,7 @@
         _settings = [Settings new];
     }
     
-    if (![_settings.source isEqualToString:@"all_id"]) {
+    if (![_settings.source isEqualToString:@"id_all"]) {
             return [[NewsItem objectsWhere:[NSString stringWithFormat:@"source = '%@'", _settings.source]]
                 sortedResultsUsingKeyPath:@"creationDate" ascending:NO];
     } else {

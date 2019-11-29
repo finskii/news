@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSString* title;
 @property (nonatomic, strong) NSString* shortDescription;
 @property (nonatomic, strong) NSDate* creationDate;
+@property (nonatomic, strong) NSString* creationDateStamp;
 @property (nonatomic, strong) NSString* source;
 @property (nonatomic, strong) NSString* imageUrl;
 @property (nonatomic, strong) NSString* isRead;

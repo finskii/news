@@ -22,7 +22,7 @@
         if (item.imagesFromItemDescription.count > 0) {
             self.imageUrl = item.imagesFromItemDescription.firstObject;
         }
-        
+        self.creationDateStamp = [NSString stringWithFormat:@"%f", self.creationDate.timeIntervalSince1970];
         
     }
     

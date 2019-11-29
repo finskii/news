@@ -43,7 +43,7 @@
         return [[NewsItem objectsWhere:[NSString stringWithFormat:@"source = '%@' AND creationDateStamp > %f", _settings.source, _interval]]
                 sortedResultsUsingKeyPath:@"creationDate" ascending:NO];
     } else {
-        return [[NewsItem objectsWhere:[NSString stringWithFormat:@"creationDateStamp > %f", _settings.source, _interval]]
+        return [[NewsItem objectsWhere:[NSString stringWithFormat:@"creationDateStamp > %f", _interval]]
                 sortedResultsUsingKeyPath:@"creationDate" ascending:NO];
     }
 }

@@ -10,7 +10,7 @@
 #import "SettingsInteractor.h"
 #import "NewsInteractor.h"
 
-@interface SettingsVC() <UITextFieldDelegate>
+@interface SettingsVC() <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *labelUpdateInterval;
 @property (weak, nonatomic) IBOutlet UILabel *labelDisplayInterval;
@@ -23,12 +23,21 @@
 @property (nonatomic, strong) NSArray<ChannelSource*>* arrSources;
 @property (nonatomic, strong) ChannelSource* selectedSource;
 
+@property (nonatomic, strong) UIPickerView* picker;
+@property (nonatomic, strong) UITextField* cheatView;
+
 @end
 
 @implementation SettingsVC
 
 #pragma mark - set/get
 
+- (UIPickerView *)picker {
+    if (!_picker) {
+        _picker = [UIPickerView new];
+    }
+    return _picker;
+}
 
 #pragma mark - override
 
@@ -43,8 +52,16 @@
     UIBarButtonItem* _buttonSettings = [[UIBarButtonItem alloc] initWithTitle:[TextProvider save] style:UIBarButtonItemStylePlain target:self action:@selector(saveSettings)];
     self.navigationItem.rightBarButtonItem = _buttonSettings;
     
+    self.cheatView = [[UITextField alloc] initWithFrame:CGRectZero];
+    
+    [self.view addSubview:self.cheatView];
+    self.cheatView.inputView = self.picker;
+    
     self.textFieldDisplayInterval.delegate = self;
     self.textFieldUpdateInterval.delegate = self;
+    
+    self.picker.delegate = self;
+    self.picker.dataSource = self;
     
     self.labelUpdateInterval.text = [TextProvider updateInterval];
     self.labelDisplayInterval.text = [TextProvider displayInterval];
@@ -83,16 +100,28 @@
 - (void) hideKeyboard {
     [self.textFieldDisplayInterval resignFirstResponder];
     [self.textFieldUpdateInterval resignFirstResponder];
+    [self.cheatView resignFirstResponder];
 }
 
 - (void) saveSettings {
-    self.settings.updateInterval = self.textFieldUpdateInterval.text;
-    self.settings.displayInterval = self.textFieldDisplayInterval.text;
-    self.settings.source = self.selectedSource.uuid;
+    [self hideKeyboard];
+    [SettingsInteractor saveSettings:self.settings update:self.textFieldDisplayInterval.text
+                                   display:self.textFieldUpdateInterval.text
+                                    source:self.selectedSource.uuid];
+
     
     [SettingsInteractor saveSettings:self.settings];
     [self closeVC];
 }
+- (IBAction)buttonSourceHandler:(id)sender {
+    if (!self.cheatView.isFirstResponder) {
+        [self.cheatView becomeFirstResponder];
+    } else {
+        [self.cheatView resignFirstResponder];
+    }
+}
+
+
 
 #pragma mark - UITextFieldDelegate
 
@@ -101,5 +130,26 @@
         textField.text = @"1";
     }
 }
+
+- (NSInteger)numberOfComponentsInPickerView:( UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.arrSources.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [[self.arrSources objectAtIndex:row] title];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    self.selectedSource = [self.arrSources objectAtIndex:row];
+    [self.buttonSource setTitle:self.selectedSource.title forState:UIControlStateNormal];
+}
+
+
+
+
 
 @end

@@ -24,4 +24,8 @@
     return _title;
 }
 
++ (NSString *)primaryKey {
+    return @"uuid";
+}
+
 @end

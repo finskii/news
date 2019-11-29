@@ -59,6 +59,9 @@
                                     <constraint firstAttribute="height" constant="40" id="eca-g1-9YA"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonSourceHandler:" destination="3BT-fH-uvq" eventType="touchUpInside" id="cth-nS-lZy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

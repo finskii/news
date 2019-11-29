@@ -27,14 +27,30 @@
 }
 
 + (RLMResults<NewsItem *>*) allNews {
-    return [[NewsItem allObjects] sortedResultsUsingKeyPath:@"creationDate" ascending:NO];
+    Settings* _settings;
+    if ([[self settings] count] > 0) {
+        _settings = [[self settings] firstObject];
+    } else {
+        _settings = [Settings new];
+    }
+    
+    if (![_settings.source isEqualToString:@"all_id"]) {
+            return [[NewsItem objectsWhere:[NSString stringWithFormat:@"source = '%@'", _settings.source]]
+                sortedResultsUsingKeyPath:@"creationDate" ascending:NO];
+    } else {
+        return [[NewsItem allObjects] sortedResultsUsingKeyPath:@"creationDate" ascending:NO];
+    }
 }
 
-
+// AND creationDate BEGINSWITH 'B'
 
 + (void) saveSources:(NSArray*)sources {
     [[RLMRealm defaultRealm] beginWriteTransaction];
-    [[RLMRealm defaultRealm] addObjects:sources];
+    @try {
+        [[RLMRealm defaultRealm] addObjects:sources];
+    } @catch (NSException *exception) {
+        NSLog(@"got a duplicate");
+    }
     [[RLMRealm defaultRealm] commitWriteTransaction];
 }
 
@@ -50,6 +66,17 @@
 + (void) saveSettings:(Settings*)settings {
     [[RLMRealm defaultRealm] beginWriteTransaction];
     [[RLMRealm defaultRealm] addObject:settings];
+    [[RLMRealm defaultRealm] commitWriteTransaction];
+}
+
++ (void)saveSettings:(Settings*)settings
+update:(NSString *)update
+     display:(NSString *)display
+source:(NSString *)source {
+    [[RLMRealm defaultRealm] beginWriteTransaction];
+    settings.updateInterval = update;
+    settings.displayInterval = display;
+    settings.source = source;
     [[RLMRealm defaultRealm] commitWriteTransaction];
 }
 

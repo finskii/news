@@ -15,6 +15,10 @@
 + (Settings*)settings;
 
 + (void) saveSettings:(Settings*)settings;
++ (void)saveSettings:(Settings*)settings
+update:(NSString *)update
+     display:(NSString *)display
+source:(NSString *)source;
 
 @end
 

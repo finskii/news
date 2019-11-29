@@ -23,4 +23,8 @@
     label.clipsToBounds = YES;
 }
 
+- (void) textFieldDayInput:(UITextField*)textField {
+    textField.keyboardType = UIKeyboardTypeNumberPad;
+}
+
 @end

@@ -1,0 +1,30 @@
+//
+//  TextPeovider.h
+//  news
+//
+//  Created by Vasilii Dmitriev on 27.11.2019.
+//  Copyright © 2019 Vasilii Dmitriev. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+
+@interface TextProvider : NSObject
+
++ (NSString*) empty;
++ (NSString*) ok;
++ (NSString*) save;
++ (NSString*) error;
+
++ (NSString*) navBarTitleNewsList;
++ (NSString*) stateNew;
++ (NSString*) stateRead;
++ (NSString*) settings;
+
++ (NSString *)navBarTitleSettingst;
++ (NSString *)updateInterval;
++ (NSString *)displayInterval;
++ (NSString *)displaySource;
+
+@end
+

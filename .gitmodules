@@ -1,0 +1,3 @@
+[submodule "RSSKit"]
+	path = RSSKit
+	url = https://github.com/quan118/RSSKit.git

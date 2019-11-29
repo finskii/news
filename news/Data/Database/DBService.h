@@ -22,6 +22,8 @@
 + (RLMResults<NewsItem *>*) allNews;
 + (RLMResults*) allSources;
 
++ (RLMResults<Settings*>*) settings;
++ (void) saveSettings:(Settings*)settings;
 
 @end
 

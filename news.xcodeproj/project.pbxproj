@@ -39,6 +39,7 @@
 		8B9CDDC423905BA900FA8E49 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDDC323905BA900FA8E49 /* Settings.m */; };
 		8B9CDDC723905D9A00FA8E49 /* ChannelSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDDC623905D9A00FA8E49 /* ChannelSource.m */; };
 		8B9CDDC92390609500FA8E49 /* SettingsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9CDDC82390609500FA8E49 /* SettingsVC.storyboard */; };
+		8B9CDDCD23912B6900FA8E49 /* SettingsInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CDDCC23912B6900FA8E49 /* SettingsInteractor.m */; };
 		8BB8235623903DBE00859DEC /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8235523903DBE00859DEC /* NewsItem.m */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +137,8 @@
 		8B9CDDC523905D9A00FA8E49 /* ChannelSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChannelSource.h; sourceTree = "<group>"; };
 		8B9CDDC623905D9A00FA8E49 /* ChannelSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChannelSource.m; sourceTree = "<group>"; };
 		8B9CDDC82390609500FA8E49 /* SettingsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsVC.storyboard; sourceTree = "<group>"; };
+		8B9CDDCB23912B6900FA8E49 /* SettingsInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsInteractor.h; sourceTree = "<group>"; };
+		8B9CDDCC23912B6900FA8E49 /* SettingsInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsInteractor.m; sourceTree = "<group>"; };
 		8BB8235423903DBE00859DEC /* NewsItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsItem.h; sourceTree = "<group>"; };
 		8BB8235523903DBE00859DEC /* NewsItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsItem.m; sourceTree = "<group>"; };
 		8BCC045723904F78009793F0 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,6 +310,7 @@
 				8B35E28C238C5299001890A5 /* Entities */,
 				8B35E281238C513C001890A5 /* Database */,
 				8B35E280238C5133001890A5 /* Network */,
+				8B9CDDCA23912B3500FA8E49 /* Settings */,
 				8B35E288238C51DD001890A5 /* News */,
 			);
 			path = Data;
@@ -408,6 +412,15 @@
 				8B9CDDBF23905AB400FA8E49 /* SettingsVC.h */,
 				8B9CDDC023905AB400FA8E49 /* SettingsVC.m */,
 				8B9CDDC82390609500FA8E49 /* SettingsVC.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		8B9CDDCA23912B3500FA8E49 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8B9CDDCB23912B6900FA8E49 /* SettingsInteractor.h */,
+				8B9CDDCC23912B6900FA8E49 /* SettingsInteractor.m */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -599,6 +612,7 @@
 				8B98C048238F183E005745E1 /* ImageProvider.m in Sources */,
 				8B35E27E238C4FBF001890A5 /* NewsCell.m in Sources */,
 				8B64DDA0238B0D5C007F970F /* ThemeManager.m in Sources */,
+				8B9CDDCD23912B6900FA8E49 /* SettingsInteractor.m in Sources */,
 				8B98C045238EFAF1005745E1 /* UILabel+LabelHeight.m in Sources */,
 				8B64DD95238B0BC8007F970F /* BaseRouter.m in Sources */,
 				8B35E274238C4D45001890A5 /* Router.m in Sources */,

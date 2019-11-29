@@ -10,4 +10,18 @@
 
 @implementation ChannelSource
 
+- (NSString *)uuid {
+    if (!_uuid) {
+        _uuid = @"all_id";
+    }
+    return _uuid;
+}
+
+- (NSString *)title {
+    if (!_title) {
+        _title = @"All";
+    }
+    return _title;
+}
+
 @end

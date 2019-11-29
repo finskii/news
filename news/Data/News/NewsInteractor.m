@@ -49,4 +49,13 @@ static NSString* urlGazeta = @"http://www.gazeta.ru/export/rss/lenta.xml";
     [DBService setNewsItemToReadState:item];
 }
 
++ (NSArray<ChannelSource *> *)allSources {
+    NSMutableArray* _arr = [NSMutableArray new];
+    [_arr addObject:[ChannelSource new]];
+    for (ChannelSource* _channelSource in [DBService allSources]) {
+        [_arr addObject:_channelSource];
+    }
+    return _arr.copy;
+}
+
 @end

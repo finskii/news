@@ -12,7 +12,9 @@
 @interface TextProvider : NSObject
 
 + (NSString*) empty;
++ (NSString*) ok;
 + (NSString*) save;
++ (NSString*) error;
 
 + (NSString*) navBarTitleNewsList;
 + (NSString*) stateNew;

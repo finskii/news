@@ -66,7 +66,7 @@
             _weakSelf.arrNews = news;
             [_weakSelf.tableView reloadData];
         } else {
-            
+            [_weakSelf showAlertWithTitle:[TextProvider error] message:error.description];
         }
     }];
 }

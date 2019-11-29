@@ -15,5 +15,7 @@
 - (void) fillDesign;
 - (void) closeVC;
 
+- (void) showAlertWithTitle:(NSString*)title message:(NSString*)message;
+
 @end
 

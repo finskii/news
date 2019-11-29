@@ -18,6 +18,13 @@
     return @"save";
 }
 
++(NSString *)ok {
+    return @"ok";
+}
+
++ (NSString *)error {
+    return @"error";
+}
 
 + (NSString *)navBarTitleNewsList {
     return @"News feed";

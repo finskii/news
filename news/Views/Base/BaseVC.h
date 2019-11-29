@@ -12,5 +12,8 @@
 
 @interface BaseVC : UIViewController
 
+- (void) fillDesign;
+- (void) closeVC;
+
 @end
 

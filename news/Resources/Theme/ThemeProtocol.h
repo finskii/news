@@ -18,4 +18,6 @@
 - (void) labelItemState:(UILabel*)label
                  isRead:(BOOL)isRead;
 
+- (void) textFieldDayInput:(UITextField*)textField;
+
 @end

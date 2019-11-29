@@ -16,7 +16,7 @@
 + (void) setNewsItemToReadState:(NewsItem*)item;
 
 + (NSArray<ChannelSource *> *)allSources;
-
++ (ChannelSource*) currentSource;
 
 @end
 

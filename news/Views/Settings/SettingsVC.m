@@ -10,7 +10,7 @@
 #import "SettingsInteractor.h"
 #import "NewsInteractor.h"
 
-@interface SettingsVC()
+@interface SettingsVC() <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *labelUpdateInterval;
 @property (weak, nonatomic) IBOutlet UILabel *labelDisplayInterval;
@@ -21,6 +21,7 @@
 
 @property (nonatomic, strong) Settings* settings;
 @property (nonatomic, strong) NSArray<ChannelSource*>* arrSources;
+@property (nonatomic, strong) ChannelSource* selectedSource;
 
 @end
 
@@ -33,6 +34,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = [TextProvider navBarTitleSettingst];
+    
+    UIGestureRecognizer* _reco = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    
+    [self.view addGestureRecognizer:_reco];
+    
+    UIBarButtonItem* _buttonSettings = [[UIBarButtonItem alloc] initWithTitle:[TextProvider save] style:UIBarButtonItemStylePlain target:self action:@selector(saveSettings)];
+    self.navigationItem.rightBarButtonItem = _buttonSettings;
+    
+    self.textFieldDisplayInterval.delegate = self;
+    self.textFieldUpdateInterval.delegate = self;
     
     self.labelUpdateInterval.text = [TextProvider updateInterval];
     self.labelDisplayInterval.text = [TextProvider displayInterval];
@@ -40,6 +52,12 @@
 
     [self fillUI];
     
+}
+
+- (void)fillDesign {
+    [super fillDesign];
+    [ThemeManager.shared.theme textFieldDayInput:self.textFieldUpdateInterval];
+    [ThemeManager.shared.theme textFieldDayInput:self.textFieldDisplayInterval];
 }
 
 
@@ -52,11 +70,36 @@
     
     self.textFieldUpdateInterval.text = self.settings.updateInterval;
     self.textFieldDisplayInterval.text = self.settings.displayInterval;
-    [self.buttonSource setTitle:self.settings.source forState:UIControlStateNormal];
+    
+    self.selectedSource = [NewsInteractor currentSource];
+    
+    [self.buttonSource setTitle:self.selectedSource.title forState:UIControlStateNormal];
     
 }
 
 
 #pragma mark - handlers
+
+- (void) hideKeyboard {
+    [self.textFieldDisplayInterval resignFirstResponder];
+    [self.textFieldUpdateInterval resignFirstResponder];
+}
+
+- (void) saveSettings {
+    self.settings.updateInterval = self.textFieldUpdateInterval.text;
+    self.settings.displayInterval = self.textFieldDisplayInterval.text;
+    self.settings.source = self.selectedSource.uuid;
+    
+    [SettingsInteractor saveSettings:self.settings];
+    [self closeVC];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if ([textField.text isEqualToString:[TextProvider empty]]) {
+        textField.text = @"1";
+    }
+}
 
 @end

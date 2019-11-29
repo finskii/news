@@ -10,6 +10,15 @@
 
 @implementation TextProvider
 
++ (NSString *)empty {
+    return @"";
+}
+
++ (NSString *)save {
+    return @"save";
+}
+
+
 + (NSString *)navBarTitleNewsList {
     return @"News feed";
 }

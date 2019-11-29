@@ -11,6 +11,9 @@
 
 @interface TextProvider : NSObject
 
++ (NSString*) empty;
++ (NSString*) save;
+
 + (NSString*) navBarTitleNewsList;
 + (NSString*) stateNew;
 + (NSString*) stateRead;

@@ -58,4 +58,12 @@ static NSString* urlGazeta = @"http://www.gazeta.ru/export/rss/lenta.xml";
     return _arr.copy;
 }
 
++ (ChannelSource*) currentSource {
+    if ([DBService currentSource].count > 0) {
+        return [DBService currentSource].firstObject;
+    } else {
+        return [ChannelSource new];
+    }
+}
+
 @end

@@ -10,4 +10,20 @@
 
 @implementation BaseVC
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self fillDesign];
+}
+
+- (void) fillDesign {
+    
+}
+
+- (void) closeVC {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end

@@ -25,6 +25,7 @@
 
 - (void) textFieldDayInput:(UITextField*)textField {
     textField.keyboardType = UIKeyboardTypeNumberPad;
+    textField.textAlignment = NSTextAlignmentCenter;
 }
 
 @end

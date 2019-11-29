@@ -42,6 +42,10 @@
     return [ChannelSource allObjects];
 }
 
++ (RLMResults<ChannelSource*>*) currentSource {    
+    return [ChannelSource objectsWhere:[NSString stringWithFormat:@"uuid = '%@'", [[[self settings] firstObject] source]]];
+}
+
 
 + (void) saveSettings:(Settings*)settings {
     [[RLMRealm defaultRealm] beginWriteTransaction];

@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) RLMResults<NewsItem*>* arrNews;
 @property (nonatomic, strong) NewsItem* selectedItem;
+@property (nonatomic, strong) UIRefreshControl* rc;
 
 @end
 
@@ -31,6 +32,11 @@
     
     UIBarButtonItem* _buttonSettings = [[UIBarButtonItem alloc] initWithTitle:[TextProvider settings] style:UIBarButtonItemStylePlain target:self action:@selector(openSettings)];
     self.navigationItem.rightBarButtonItem = _buttonSettings;
+    
+    self.rc = [UIRefreshControl new];
+    [self.rc addTarget:self action:@selector(loadData) forControlEvents:UIControlEventValueChanged];
+    
+    [self.tableView addSubview:self.rc];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -62,6 +68,7 @@
     __weak typeof(self) _weakSelf = self;
     
     [NewsInteractor loadNews:^(RLMResults<NewsItem *> *news, NSObject *error) {
+        [_weakSelf.rc endRefreshing];
         if (!error) {
             _weakSelf.arrNews = news;
             [_weakSelf.tableView reloadData];
